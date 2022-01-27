@@ -41,6 +41,7 @@ class CookieParser:
         split_line = line.split(",")
         # Checks that CSV matches format
         if split_line[0] != "cookie" or split_line[1][:-1] != "timestamp":
+            file.close()
             raise ValueError("CSV does not match format")
         
         # Gets first instance from CSV
